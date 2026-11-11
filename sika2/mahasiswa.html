@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIKA 2 - Profil Mahasiswa</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>SIKA 2</h1>
+      <p>Sistem Informasi Akademik</p>
+    </div>
+  </header>
+
+  <nav aria-label="Navigasi utama">
+    <div class="container">
+      <ul>
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="mahasiswa.html" aria-current="page">Profil Mahasiswa</a></li>
+        <li><a href="form-mahasiswa.html">Form Mahasiswa</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h2 class="page-title">Profil Mahasiswa</h2>
+
+    <section class="profile">
+      <figure>
+        <img src="assets/images/ArmanMaulana.jpg" alt="Foto profil mahasiswa Arman Maulana">
+        <figcaption>Arman Maulana</figcaption>
+      </figure>
+      <div class="profile-info">
+        <h2>Identitas Mahasiswa</h2>
+        <p><strong>NIM:</strong> 24010001</p>
+        <p><strong>Nama:</strong> Arman Maulana</p>
+        <p><strong>Email:</strong> arman@example.com</p>
+        <p><strong>Program Studi:</strong> Teknik Informatika</p>
+        <p><strong>Angkatan:</strong> 2025</p>
+        <p><strong>Status:</strong> Aktif</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Informasi Akademik</h2>
+      <div class="table-wrapper">
+        <table>
+          <caption>Status Akademik Mahasiswa</caption>
+          <tbody>
+            <tr><th scope="row">Program Studi</th><td>Teknik Informatika</td></tr>
+            <tr><th scope="row">Angkatan</th><td>2024</td></tr>
+            <tr><th scope="row">Status</th><td>Aktif</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Daftar Mahasiswa</h2>
+
+      <div class="toolbar">
+        <div class="form-group">
+          <label for="cariMahasiswa">Cari Mahasiswa</label>
+          <input type="search" id="cariMahasiswa" placeholder="Cari NIM atau nama..." autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label for="filterProdi">Filter Program Studi</label>
+          <select id="filterProdi">
+            <option value="">Semua Program Studi</option>
+            <option value="Teknik Informatika">Teknik Informatika</option>
+            <option value="Sistem Informasi">Sistem Informasi</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table id="tabelMahasiswa">
+          <caption>Ringkasan Data Mahasiswa (data dummy)</caption>
+          <thead>
+            <tr>
+              <th scope="col">NIM</th>
+              <th scope="col">Nama</th>
+              <th scope="col">Program Studi</th>
+              <th scope="col">Angkatan</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>24010001</td><td>Andi Saputra</td><td>Teknik Informatika</td><td>2024</td><td>Aktif</td></tr>
+            <tr><td>24010002</td><td>Budi Santoso</td><td>Teknik Informatika</td><td>2024</td><td>Aktif</td></tr>
+            <tr><td>24020001</td><td>Citra Lestari</td><td>Sistem Informasi</td><td>2024</td><td>Aktif</td></tr>
+            <tr><td>23020005</td><td>Dewi Anggraini</td><td>Sistem Informasi</td><td>2023</td><td>Nonaktif</td></tr>
+            <tr><td>23010007</td><td>Eko Prasetyo</td><td>Teknik Informatika</td><td>2023</td><td>Aktif</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p id="pesanKosong" class="empty-message" role="status" hidden>&#9888; Data tidak ditemukan.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 SIKA 2</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>

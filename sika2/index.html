@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIKA 2 - Dashboard</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>SIKA 2</h1>
+      <p>Sistem Informasi Akademik</p>
+    </div>
+  </header>
+
+  <nav aria-label="Navigasi utama">
+    <div class="container">
+      <ul>
+        <li><a href="index.html" aria-current="page">Dashboard</a></li>
+        <li><a href="mahasiswa.html">Profil Mahasiswa</a></li>
+        <li><a href="form-mahasiswa.html">Form Mahasiswa</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section>
+      <h2>Dashboard Akademik</h2>
+      <p>Selamat datang di prototipe SIKA 2.</p>
+
+      <div class="dashboard-grid">
+        <article class="card">
+          <h2>Mahasiswa</h2>
+          <p>Kelola data mahasiswa.</p>
+        </article>
+        <article class="card">
+          <h2>Mata Kuliah</h2>
+          <p>Informasi mata kuliah.</p>
+        </article>
+        <article class="card">
+          <h2>KRS</h2>
+          <p>Rencana studi mahasiswa.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Cek Status Aplikasi</h2>
+      <p id="statusAplikasi" class="status">Siap digunakan</p>
+      <button type="button" id="btnCek">Cek Status</button>
+    </section>
+
+    <aside class="card">
+      <h2>Informasi</h2>
+      <p>Data pada SIKA 2 masih berupa data statis (dummy). Validasi di browser hanya membantu pengguna; validasi keamanan dilakukan di server pada tahap berikutnya.</p>
+    </aside>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 SIKA 2</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>

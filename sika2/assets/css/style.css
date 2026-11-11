@@ -1,0 +1,201 @@
+/* SIKA 2 - style.css (Bab 3)
+   Urutan: 1 Reset/Base, 2 Variables, 3 Typography, 4 Layout,
+   5 Components, 6 Forms & Tables, 7 Media Queries */
+
+/* 1. Reset / Base */
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--background);
+}
+img { max-width: 100%; height: auto; }
+
+/* 2. Variables (design tokens) */
+:root {
+  --primary: #000dff47;
+  --primary-dark: #1e7aaf;
+  --surface: #ffffff;
+  --background: #f3f4f6;
+  --text: #1f2937;
+  --muted: #4b5563;
+  --border: #d1d5db;
+  --error: #b42318;
+  --success: #067647;
+  --focus: #f59e0b;
+  --radius: .75rem;
+  --radius-sm: .4rem;
+  --space-1: .5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+}
+
+/* 3. Typography */
+h1 { font-size: 1.75rem; margin: 0; }
+h2 { font-size: 1.35rem; margin: 0 0 var(--space-1); }
+.page-title { font-size: 1.6rem; color: var(--primary-dark); }
+p { color: var(--muted); margin: 0 0 var(--space-2); }
+.hint { display: block; color: var(--muted); font-size: .85rem; }
+
+/* 4. Layout */
+.container { width: min(100% - 2rem, 1100px); margin-inline: auto; }
+main > section, main > aside { margin-block: var(--space-3); }
+
+header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: var(--space-2) 0;
+}
+header h1 { color: var(--primary); }
+header p { margin: 0; }
+
+nav { background: var(--primary); }
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem;
+  list-style: none;
+  margin: 0;
+  padding: .6rem 0;
+}
+nav a {
+  display: block;
+  padding: .6rem .8rem;
+  color: #fff;
+  text-decoration: none;
+  border-radius: .35rem;
+}
+nav a:hover, nav a:focus { background: var(--primary-dark); }
+nav a[aria-current="page"] { background: var(--primary-dark); text-decoration: underline; }
+
+footer { padding: var(--space-2) 0; border-top: 1px solid var(--border); background: var(--surface); }
+footer p { margin: 0; text-align: center; }
+
+/* 5. Components */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2);
+  margin-block: var(--space-3);
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-2);
+}
+.card h2 { margin-top: 0; font-size: 1.1rem; }
+
+.profile {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  background: var(--surface);
+  padding: var(--space-2);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+.profile figure { margin: 0; }
+.profile img { max-width: 180px; border-radius: var(--radius); }
+.profile figcaption { color: var(--muted); font-size: .9rem; }
+.profile-info p { margin-bottom: .35rem; }
+
+button, input[type="submit"] {
+  border: 0;
+  border-radius: var(--radius-sm);
+  padding: .7rem 1rem;
+  background: var(--primary);
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+button:hover, input[type="submit"]:hover { background: var(--primary-dark); }
+.btn-secondary { background: #fff; color: var(--primary-dark); border: 1px solid var(--primary); }
+.btn-secondary:hover { background: #eff6ff; }
+.button-group { display: flex; flex-wrap: wrap; gap: var(--space-1); margin-top: var(--space-2); }
+
+/* Focus terlihat untuk keyboard */
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* Status: warna + ikon/teks (tidak hanya warna) */
+.status { font-weight: 600; }
+.status.success::before { content: "\2713  "; color: var(--success); }
+.status.success { color: var(--success); }
+.status.error::before { content: "\26A0  "; color: var(--error); }
+.status.error { color: var(--error); }
+
+.empty-message { color: var(--error); font-weight: 600; margin-top: var(--space-1); }
+.preview strong { overflow-wrap: anywhere; }
+
+/* 6. Forms & Tables */
+form {
+  max-width: 760px;
+  background: var(--surface);
+  padding: 1.25rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+.form-group { margin-bottom: var(--space-2); }
+label { display: block; margin-bottom: .35rem; font-weight: 600; }
+.inline-label { display: inline-block; margin-right: var(--space-2); font-weight: 400; }
+input, select, textarea {
+  width: 100%;
+  padding: .7rem .8rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font: inherit;
+  background: #fff;
+}
+input[type="radio"] { width: auto; }
+input:focus, select:focus, textarea:focus { border-color: var(--primary); }
+fieldset { border: 1px solid var(--border); border-radius: var(--radius-sm); margin: 0 0 var(--space-2); }
+
+.error-message {
+  display: block;
+  min-height: 1.2rem;
+  margin-top: .25rem;
+  color: var(--error);
+  font-size: .875rem;
+}
+.error-message:not(:empty)::before { content: "\26A0  Kesalahan: "; font-weight: 700; }
+.input-error { border-color: var(--error); border-width: 2px; }
+.input-ok { border-color: var(--success); }
+
+.toolbar { display: grid; grid-template-columns: 1fr; gap: var(--space-1); }
+
+.table-wrapper {
+  overflow-x: auto;
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+table { width: 100%; min-width: 600px; border-collapse: collapse; }
+caption { text-align: left; padding: .75rem; font-weight: 700; }
+th, td { padding: .75rem; border-bottom: 1px solid var(--border); text-align: left; }
+th { background: #eff6ff; color: #1e3a8a; }
+
+/* 7. Media Queries (mobile-first) */
+@media (max-width: 640px) {
+  nav ul { flex-direction: column; }
+}
+@media (min-width: 640px) {
+  .dashboard-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 700px) {
+  .profile { grid-template-columns: 180px 1fr; }
+  .toolbar { grid-template-columns: 1fr 1fr; gap: var(--space-2); }
+}
+@media (min-width: 768px) {
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); }
+}
+@media (min-width: 960px) {
+  .dashboard-grid { grid-template-columns: repeat(3, 1fr); }
+}
